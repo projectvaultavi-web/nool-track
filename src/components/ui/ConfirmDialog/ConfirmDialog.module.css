@@ -1,0 +1,12 @@
+.description {
+  color: var(--color-text-secondary);
+  font-size: var(--text-base);
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-3);
+  width: 100%;
+  justify-content: flex-end;
+}

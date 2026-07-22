@@ -1,0 +1,125 @@
+.topbar {
+  height: var(--topbar-height);
+  background-color: var(--color-bg-primary);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-4);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.mobileLeft {
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 769px) {
+  .mobileLeft {
+    display: none;
+  }
+}
+
+.logoDot {
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-full);
+}
+
+.titleContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 769px) {
+  .titleContainer {
+    justify-content: flex-start;
+  }
+}
+
+.title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.desktopCenter {
+  display: none;
+  flex: 1;
+  justify-content: center;
+}
+
+@media (min-width: 769px) {
+  .desktopCenter {
+    display: flex;
+  }
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-3);
+  width: 100%;
+  max-width: 400px;
+  gap: var(--space-2);
+}
+
+.searchIcon {
+  color: var(--color-text-tertiary);
+}
+
+.searchBar input {
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--color-text-primary);
+  width: 100%;
+  font-size: var(--text-sm);
+}
+
+.searchBar input::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.userInfo {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .userInfo {
+    display: block;
+  }
+}
+
+.userName {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-primary);
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-bold);
+  font-size: var(--text-sm);
+}

@@ -1,0 +1,51 @@
+.card {
+  background-color: var(--color-surface);
+  border: var(--border-width) solid var(--color-surface-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  width: 100%;
+}
+
+.subtle {
+  background-color: var(--color-primary-subtle);
+  border-color: transparent;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.label {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-medium);
+}
+
+.value {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+}
+
+.icon {
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-surface-hover);
+  border-radius: var(--radius-full);
+}
+
+.subtle .icon {
+  background-color: transparent;
+}

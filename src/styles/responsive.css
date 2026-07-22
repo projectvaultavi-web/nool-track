@@ -1,0 +1,62 @@
+/* Mobile-first breakpoints */
+/* Default styles target phones (< 768px) */
+
+/* Hide on mobile, show on desktop */
+.desktop-only {
+  display: none !important;
+}
+
+/* Show on mobile, hide on desktop */
+.mobile-only {
+  display: block !important;
+}
+
+@media (min-width: 768px) {
+  .desktop-only {
+    display: block !important;
+  }
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+/* Flex variants */
+.desktop-only-flex {
+  display: none !important;
+}
+
+.mobile-only-flex {
+  display: flex !important;
+}
+
+@media (min-width: 768px) {
+  .desktop-only-flex {
+    display: flex !important;
+  }
+  .mobile-only-flex {
+    display: none !important;
+  }
+}
+
+/* Responsive container */
+.container {
+  width: 100%;
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: var(--space-6);
+    padding-right: var(--space-6);
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: var(--content-max-width);
+    padding-left: var(--space-8);
+    padding-right: var(--space-8);
+  }
+}

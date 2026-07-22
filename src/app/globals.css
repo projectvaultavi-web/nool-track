@@ -1,0 +1,10 @@
+@import '../styles/reset.css';
+@import '../styles/tokens.css';
+@import '../styles/typography.css';
+@import '../styles/animations.css';
+@import '../styles/responsive.css';
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+}

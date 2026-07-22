@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  background-color: var(--color-bg-secondary);
+  padding: var(--space-1);
+  border-radius: var(--radius-md);
+  width: 100%;
+}
+
+.segment {
+  flex: 1;
+  text-align: center;
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-secondary);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  min-height: 40px; /* touch target */
+  transition: all var(--transition-fast);
+}
+
+.segment.active {
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  box-shadow: var(--shadow-sm);
+}

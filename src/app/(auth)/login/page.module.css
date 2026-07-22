@@ -1,0 +1,99 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  margin: 0;
+}
+
+.subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.passwordContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.forgotLink {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: var(--text-xs);
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: var(--font-medium);
+}
+
+.forgotLink:hover {
+  text-decoration: underline;
+}
+
+.submitBtn {
+  margin-top: var(--space-2);
+  width: 100%;
+}
+
+.footer {
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.link {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: var(--font-medium);
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.strengthBar {
+  height: 4px;
+  border-radius: var(--radius-full);
+  margin-top: var(--space-2);
+  transition: all var(--transition-fast);
+}
+
+.strengthWeak {
+  width: 33%;
+  background-color: var(--color-danger);
+}
+
+.strengthMedium {
+  width: 66%;
+  background-color: var(--color-warning);
+}
+
+.strengthStrong {
+  width: 100%;
+  background-color: var(--color-success);
+}
+
+.strengthText {
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+  margin-top: var(--space-1);
+}
