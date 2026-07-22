@@ -8,6 +8,8 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: 'sm' | 'md' | 'lg';
   isLoading?: boolean;
   isFullWidth?: boolean;
+  leftIcon?: React.ReactNode;
+  rightIcon?: React.ReactNode;
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -18,6 +20,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       size = 'md',
       isLoading = false,
       isFullWidth = false,
+      leftIcon,
+      rightIcon,
       disabled,
       children,
       ...props
@@ -66,7 +70,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             </svg>
           </span>
         )}
+        {leftIcon && <span className={styles.icon}>{leftIcon}</span>}
         <span className={styles.content}>{children}</span>
+        {rightIcon && <span className={styles.icon}>{rightIcon}</span>}
       </button>
     );
   }
