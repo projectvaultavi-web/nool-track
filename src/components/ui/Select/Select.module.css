@@ -74,3 +74,8 @@
   color: var(--color-danger);
   margin: 0;
 }
+
+.required {
+  color: var(--color-danger);
+  margin-left: 2px;
+}

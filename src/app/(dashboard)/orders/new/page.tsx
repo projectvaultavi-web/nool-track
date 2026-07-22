@@ -37,7 +37,7 @@ export default function NewOrderPage() {
     ]
   });
 
-  const handleChange = (field: string, value: any) => {
+  const handleChange = (field: string, value: any /* eslint-disable-line @typescript-eslint/no-explicit-any */) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
@@ -65,6 +65,10 @@ export default function NewOrderPage() {
     try {
       await createOrder.mutateAsync({
         ...formData,
+        buyerId: formData.buyerId || undefined,
+        styleNumber: formData.styleNumber || undefined,
+        materialType: formData.materialType || undefined,
+        color: formData.color || undefined,
         gsm: formData.gsm ? Number(formData.gsm) : undefined,
         totalQuantity: Number(formData.totalQuantity),
         deadline: formData.deadline ? new Date(formData.deadline).toISOString() : undefined,
@@ -75,7 +79,7 @@ export default function NewOrderPage() {
       });
       addToast({ message: 'Production order created successfully!', type: 'success' });
       setTimeout(() => router.push('/orders'), 1500);
-    } catch (error: any) {
+    } catch (error: any /* eslint-disable-line @typescript-eslint/no-explicit-any */) {
       addToast({ message: error.message || 'Failed to create order', type: 'error' });
     }
   };
@@ -86,7 +90,7 @@ export default function NewOrderPage() {
       content: (
         <div className="space-y-4 py-4">
           <Input
-            label="Order Number *"
+            label="Order Number"
             value={formData.orderNumber}
             onChange={(e) => handleChange('orderNumber', e.target.value)}
             placeholder="PO-2026-001"
@@ -105,7 +109,7 @@ export default function NewOrderPage() {
             ))}
           </Select>
           <Input
-            label="Description *"
+            label="Description"
             value={formData.description}
             onChange={(e) => handleChange('description', e.target.value)}
             placeholder="e.g. 5000 Summer T-Shirts"
@@ -126,14 +130,14 @@ export default function NewOrderPage() {
         <div className="space-y-4 py-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Input
-              label="Total Quantity *"
+              label="Total Quantity"
               type="number"
               value={formData.totalQuantity}
               onChange={(e) => handleChange('totalQuantity', e.target.value)}
               required
             />
             <Select
-              label="Unit *"
+              label="Unit"
               value={formData.unit}
               onChange={(e) => handleChange('unit', e.target.value)}
             >

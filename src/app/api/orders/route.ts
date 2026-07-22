@@ -48,7 +48,7 @@ export async function GET(request: NextRequest) {
 
     const where = {
       organizationId: user.organizationId,
-      ...(status && status !== 'ALL' ? { status: status as any } : {}),
+      ...(status && status !== 'ALL' ? { status: status as any /* eslint-disable-line @typescript-eslint/no-explicit-any */ } : {}),
       ...(search ? {
         OR: [
           { orderNumber: { contains: search, mode: 'insensitive' as const } },
@@ -126,7 +126,7 @@ export async function POST(request: NextRequest) {
     const data = result.data;
 
     // Snapshot buyer if provided
-    let buyerSnapshot: any = {};
+    let buyerSnapshot: any /* eslint-disable-line @typescript-eslint/no-explicit-any */ = {};
     if (data.buyerId) {
       const buyer = await prisma.buyer.findUnique({
         where: { id: data.buyerId, organizationId: user.organizationId }

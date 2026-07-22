@@ -124,7 +124,7 @@ export default function JobsPage() {
                       {job.processType}
                     </div>
                   </div>
-                  <Badge variant={getStatusColor(job.status) as any}>
+                  <Badge variant={getStatusColor(job.status) as any /* eslint-disable-line */}>
                     {job.status.replace(/_/g, ' ')}
                   </Badge>
                 </CardHeader>

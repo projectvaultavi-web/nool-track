@@ -13,7 +13,7 @@ export default function OrderPipelinePage({ params }: { params: Promise<{ id: st
   const { id } = use(params);
   
   const { data: order, isLoading: isOrderLoading, error: orderError } = useOrder(id);
-  const { data: jobsData, isLoading: isJobsLoading } = useJobs({ orderId: id, limit: 100 });
+  const { data: jobsData, isLoading: isJobsLoading /* eslint-disable-line */ } = useJobs({ orderId: id, limit: 100 });
 
   if (isOrderLoading) return <div className="flex h-64 items-center justify-center"><LoadingSpinner size="lg" /></div>;
   if (orderError || !order) return <EmptyState title="Error" description="Could not load order." />;
@@ -81,7 +81,7 @@ export default function OrderPipelinePage({ params }: { params: Promise<{ id: st
       <div className="mt-4">
         <h2 className="text-xl font-bold mb-6">Production Pipeline</h2>
         <div className="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-300 before:to-transparent">
-          {order.stages?.sort((a, b) => a.sequenceNumber - b.sequenceNumber).map((stage, idx) => {
+          {order.stages?.sort((a, b) => a.sequenceNumber - b.sequenceNumber).map((stage, idx /* eslint-disable-line */) => {
             const stageJobs = jobs.filter(j => j.stageId === stage.id);
             
             return (

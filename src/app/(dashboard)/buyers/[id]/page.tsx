@@ -39,7 +39,7 @@ export default function BuyerDetailsPage({ params }: { params: Promise<{ id: str
 
   if (isLoading) {
     return (
-      <div style={{ display: 'flex', justifyContent: 'center', padding: 'var(--spacing-8)' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', padding: 'var(--space-8)' }}>
         <LoadingSpinner size="lg" />
       </div>
     );

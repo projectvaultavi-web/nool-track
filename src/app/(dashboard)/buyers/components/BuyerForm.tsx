@@ -76,14 +76,16 @@ export function BuyerForm({ initialData }: BuyerFormProps) {
     >
       <div className={styles.grid}>
         <Input
-          label="Buyer Name *"
+          label="Buyer Name"
+          required
           placeholder="e.g. Acme Corp"
           error={errors.name?.message}
           {...register('name')}
         />
 
         <Input
-          label="Company Name *"
+          label="Company Name"
+          required
           placeholder="e.g. Acme Corporation Ltd"
           error={errors.companyName?.message}
           {...register('companyName')}

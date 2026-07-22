@@ -7,7 +7,7 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--spacing-6);
+  gap: var(--space-6);
 }
 
 @media (min-width: 768px) {
@@ -19,25 +19,25 @@
 .mainCol {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-6);
+  gap: var(--space-6);
 }
 
 .sideCol {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-6);
+  gap: var(--space-6);
 }
 
 .section {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-4);
+  gap: var(--space-4);
 }
 
 .infoGroup {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-2);
+  gap: var(--space-2);
 }
 
 .label {
@@ -52,7 +52,7 @@
 
 .badges {
   display: flex;
-  gap: var(--spacing-2);
+  gap: var(--space-2);
   flex-wrap: wrap;
 }
 

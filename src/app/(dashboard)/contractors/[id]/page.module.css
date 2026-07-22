@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-6);
+  gap: var(--space-6);
 }
 
 .loadingWrap {
@@ -14,7 +14,7 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--spacing-6);
+  gap: var(--space-6);
 }
 
 @media (min-width: 1024px) {
@@ -26,14 +26,14 @@
 .detailsList {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-4);
-  margin-top: var(--spacing-2);
+  gap: var(--space-4);
+  margin-top: var(--space-2);
 }
 
 .detailRow {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-1);
+  gap: var(--space-1);
 }
 
 @media (min-width: 640px) {
@@ -57,8 +57,8 @@
 .badges {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-2);
-  margin-top: var(--spacing-2);
+  gap: var(--space-2);
+  margin-top: var(--space-2);
 }
 
 .notesText {
@@ -66,5 +66,5 @@
   font-size: var(--font-size-sm);
   line-height: 1.6;
   white-space: pre-wrap;
-  margin-top: var(--spacing-2);
+  margin-top: var(--space-2);
 }

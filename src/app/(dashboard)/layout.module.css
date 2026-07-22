@@ -21,7 +21,7 @@
 
 .content {
   flex: 1;
-  padding: var(--space-4) var(--space-4);
+  padding: var(--space-6);
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
@@ -29,6 +29,6 @@
 
 @media (min-width: 640px) {
   .content {
-    padding: var(--space-6) var(--space-8);
+    padding: var(--space-8);
   }
 }

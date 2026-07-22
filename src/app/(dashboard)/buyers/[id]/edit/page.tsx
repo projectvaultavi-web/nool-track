@@ -13,7 +13,7 @@ export default function EditBuyerPage({ params }: { params: Promise<{ id: string
 
   if (isLoading) {
     return (
-      <div style={{ display: 'flex', justifyContent: 'center', padding: 'var(--spacing-8)' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', padding: 'var(--space-8)' }}>
         <LoadingSpinner size="lg" />
       </div>
     );

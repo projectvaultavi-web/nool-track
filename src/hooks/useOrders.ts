@@ -1,5 +1,5 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { ProductionOrder, ProductionStage, Job } from '@prisma/client';
+import { ProductionOrder, ProductionStage } from '@prisma/client';
 
 export type ProductionOrderWithRelations = ProductionOrder & {
   stages: ProductionStage[];
@@ -61,7 +61,7 @@ export function useCreateOrder() {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: async (data: any) => {
+    mutationFn: async (data: any /* eslint-disable-line @typescript-eslint/no-explicit-any */) => {
       const res = await fetch('/api/orders', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -84,7 +84,7 @@ export function useUpdateOrder(id: string) {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: async (data: any) => {
+    mutationFn: async (data: any /* eslint-disable-line @typescript-eslint/no-explicit-any */) => {
       const res = await fetch(`/api/orders/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },

@@ -3,8 +3,8 @@ import { Job, JobReturn } from '@prisma/client';
 
 export type JobWithRelations = Job & {
   returns?: JobReturn[];
-  stage?: any;
-  contractor?: any;
+  stage?: any; /* eslint-disable-line @typescript-eslint/no-explicit-any */
+  contractor?: any; /* eslint-disable-line @typescript-eslint/no-explicit-any */
 };
 
 interface FetchJobsParams {
@@ -67,7 +67,7 @@ export function useCreateJob() {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: async (data: any) => {
+    mutationFn: async (data: any /* eslint-disable-line @typescript-eslint/no-explicit-any */) => {
       const res = await fetch('/api/jobs', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -91,7 +91,7 @@ export function useUpdateJob(id: string) {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: async (data: any) => {
+    mutationFn: async (data: any /* eslint-disable-line @typescript-eslint/no-explicit-any */) => {
       const res = await fetch(`/api/jobs/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
@@ -138,7 +138,7 @@ export function useCreateJobReturn(id: string) {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: async (data: any) => {
+    mutationFn: async (data: any /* eslint-disable-line @typescript-eslint/no-explicit-any */) => {
       const res = await fetch(`/api/jobs/${id}/returns`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

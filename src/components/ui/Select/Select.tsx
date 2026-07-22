@@ -42,7 +42,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
       <div className={wrapperClasses}>
         {label && (
           <label htmlFor={selectId} className={styles.label}>
-            {label}
+            {label} {props.required && <span className={styles.required}>*</span>}
           </label>
         )}
         <div className={styles.selectContainer}>

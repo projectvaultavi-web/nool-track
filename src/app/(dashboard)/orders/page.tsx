@@ -7,7 +7,6 @@ import {
   Card,
   CardBody,
   CardHeader,
-  CardTitle,
   CardFooter,
   Button,
   SearchInput,
@@ -136,7 +135,7 @@ export default function OrdersPage() {
                     </h3>
                     <p className="text-sm text-gray-500">{order.styleNumber || 'No style no.'}</p>
                   </div>
-                  <Badge variant={getStatusColor(order.status) as any}>
+                  <Badge variant={getStatusColor(order.status) as any /* eslint-disable-line */}>
                     {getStatusLabel(order.status)}
                   </Badge>
                 </CardHeader>

@@ -53,7 +53,8 @@ export function ContractorForm({ initialData, onSubmit, isLoading }: ContractorF
     >
       <div className={styles.grid}>
         <Input
-          label="Company Name *"
+          label="Company Name"
+          required
           placeholder="Enter company name"
           error={errors.name?.message}
           {...register('name')}
@@ -106,7 +107,8 @@ export function ContractorForm({ initialData, onSubmit, isLoading }: ContractorF
 
       <div className={styles.grid}>
         <Select
-          label="Contractor Type *"
+          label="Contractor Type"
+          required
           error={errors.contractorType?.message}
           {...register('contractorType')}
         >
@@ -134,7 +136,7 @@ export function ContractorForm({ initialData, onSubmit, isLoading }: ContractorF
 
       {/* Specializations (Multi-Select Fake via checkboxes or just standard HTML select multiple) */}
       <div className={styles.fieldGroup}>
-        <label className={styles.label}>Services Offered *</label>
+        <label className={styles.label}>Services Offered <span className="required">*</span></label>
         <div className={styles.checkboxGrid}>
           {PROCESS_TYPES.map((type) => (
             <label key={type} className={styles.checkboxLabel}>

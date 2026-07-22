@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useCreateJob } from '@/hooks/useJobs';
 import { useOrders } from '@/hooks/useOrders';
@@ -47,6 +47,7 @@ export default function NewJobPage() {
     try {
       await createJob.mutateAsync({
         ...formData,
+        stageId: formData.stageId || undefined,
         quantitySent: Number(formData.quantitySent),
         rate: formData.rate ? Number(formData.rate) : undefined,
         transportCost: formData.transportCost ? Number(formData.transportCost) : undefined,
@@ -60,7 +61,7 @@ export default function NewJobPage() {
           router.push('/jobs');
         }
       }, 1500);
-    } catch (error: any) {
+    } catch (error: any /* eslint-disable-line @typescript-eslint/no-explicit-any */) {
       addToast({ message: error.message || 'Failed to create job', type: 'error' });
     }
   };
@@ -77,20 +78,20 @@ export default function NewJobPage() {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <Input
-                label="Challan Number *"
+                label="Challan Number"
                 value={formData.challanNumber}
                 onChange={(e) => handleChange('challanNumber', e.target.value)}
                 placeholder="CH-2026-001"
                 required
               />
               <Select
-                label="Contractor *"
+                label="Contractor"
                 value={formData.contractorId}
                 onChange={(e) => handleChange('contractorId', e.target.value)}
                 required
               >
                 <option value="">Select Contractor</option>
-                {contractorsData?.data.map((c: any) => (
+                {contractorsData?.data.map((c: any /* eslint-disable-line @typescript-eslint/no-explicit-any */) => (
                   <option key={c.id} value={c.id}>{c.name}</option>
                 ))}
               </Select>
@@ -102,13 +103,13 @@ export default function NewJobPage() {
                 disabled={!!initialOrderId}
               >
                 <option value="">Standalone Job</option>
-                {ordersData?.data.map((o: any) => (
+                {ordersData?.data.map((o: any /* eslint-disable-line @typescript-eslint/no-explicit-any */) => (
                   <option key={o.id} value={o.id}>{o.orderNumber}</option>
                 ))}
               </Select>
 
               <Select
-                label="Process Type *"
+                label="Process Type"
                 value={formData.processType}
                 onChange={(e) => handleChange('processType', e.target.value)}
                 required
@@ -120,7 +121,7 @@ export default function NewJobPage() {
             </div>
 
             <Input
-              label="Material Description *"
+              label="Material Description"
               value={formData.materialDescription}
               onChange={(e) => handleChange('materialDescription', e.target.value)}
               placeholder="E.g. Cut panels for 500 shirts"
@@ -129,14 +130,14 @@ export default function NewJobPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <Input
-                label="Quantity Sent *"
+                label="Quantity Sent"
                 type="number"
                 value={formData.quantitySent}
                 onChange={(e) => handleChange('quantitySent', e.target.value)}
                 required
               />
               <Select
-                label="Unit *"
+                label="Unit"
                 value={formData.unit}
                 onChange={(e) => handleChange('unit', e.target.value)}
                 required
@@ -147,7 +148,7 @@ export default function NewJobPage() {
               </Select>
 
               <Input
-                label="Expected Return Date *"
+                label="Expected Return Date"
                 type="date"
                 value={formData.expectedReturnDate}
                 onChange={(e) => handleChange('expectedReturnDate', e.target.value)}

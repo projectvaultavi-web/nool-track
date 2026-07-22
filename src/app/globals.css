@@ -8,3 +8,8 @@ body {
   background-color: var(--color-bg-primary);
   color: var(--color-text-primary);
 }
+
+option {
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+}

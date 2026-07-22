@@ -43,7 +43,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       <div className={wrapperClasses}>
         {label && (
           <label htmlFor={inputId} className={styles.label}>
-            {label}
+            {label} {props.required && <span className={styles.required}>*</span>}
           </label>
         )}
         <input

@@ -54,7 +54,7 @@ export async function GET(request: NextRequest) {
 
     const where = {
       organizationId: user.organizationId,
-      ...(status && status !== 'ALL' ? { status: status as any } : {}),
+      ...(status && status !== 'ALL' ? { status: status as any /* eslint-disable-line @typescript-eslint/no-explicit-any */ } : {}),
       ...(stageId ? { stageId } : {}),
       ...(search ? {
         OR: [

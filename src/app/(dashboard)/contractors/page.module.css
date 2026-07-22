@@ -15,7 +15,7 @@
 .list {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--spacing-4);
+  gap: var(--space-4);
 }
 
 @media (min-width: 768px) {
@@ -33,14 +33,14 @@
 .cardContent {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-4);
-  margin-top: var(--spacing-2);
+  gap: var(--space-4);
+  margin-top: var(--space-2);
 }
 
 .contactInfo {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-1);
+  gap: var(--space-1);
 }
 
 .contactName {
@@ -58,7 +58,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: var(--spacing-3);
+  padding-top: var(--space-3);
   border-top: 1px solid var(--border-color);
   font-size: var(--font-size-sm);
 }
@@ -75,15 +75,15 @@
 
 .badges {
   display: flex;
-  gap: var(--spacing-2);
+  gap: var(--space-2);
   flex-wrap: wrap;
-  padding-top: var(--spacing-3);
+  padding-top: var(--space-3);
   border-top: 1px solid var(--border-color);
 }
 
 .paginationWrap {
   display: flex;
   justify-content: center;
-  margin-top: var(--spacing-6);
-  padding-bottom: var(--spacing-4);
+  margin-top: var(--space-6);
+  padding-bottom: var(--space-4);
 }
