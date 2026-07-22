@@ -1,0 +1,32 @@
+.filtersContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+}
+
+.searchWrap {
+  flex: 1;
+}
+
+.selectWrap {
+  display: flex;
+  gap: var(--spacing-3);
+}
+
+.selectWrap > * {
+  flex: 1;
+}
+
+@media (min-width: 768px) {
+  .filtersContainer {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .selectWrap {
+    flex: none;
+    width: auto;
+    min-width: 300px;
+  }
+}

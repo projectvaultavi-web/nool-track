@@ -74,6 +74,16 @@ enum PaymentMode {
   CHEQUE
 }
 
+enum PaymentTerms {
+  IMMEDIATE
+  DAYS_7
+  DAYS_15
+  DAYS_30
+  DAYS_45
+  DAYS_60
+  CUSTOM
+}
+
 model Organization {
   id        String   @id @default(uuid()) @db.Uuid
   name      String   @db.VarChar(255)
@@ -142,8 +152,14 @@ model Contractor {
   name            String        @db.VarChar(255)
   phone           String?       @db.VarChar(20)
   address         String?       @db.Text
-  gstNumber       String?       @map("gst_number") @db.VarChar(15)
-  specializations ProcessType[]
+  gstNumber             String?       @map("gst_number") @db.VarChar(15)
+  contractorType        ProcessType   @map("contractor_type")
+  specializations       ProcessType[]
+  contactPerson         String?       @map("contact_person") @db.VarChar(255)
+  email                 String?       @db.VarChar(255)
+  rating                Decimal?      @db.Decimal(3, 2)
+  notes                 String?       @db.Text
+  preferredPaymentTerms PaymentTerms? @map("preferred_payment_terms")
   isActive        Boolean       @default(true) @map("is_active")
   createdAt       DateTime      @default(now()) @map("created_at")
   updatedAt       DateTime      @updatedAt @map("updated_at")
