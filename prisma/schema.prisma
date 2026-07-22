@@ -129,15 +129,23 @@ model User {
 }
 
 model Buyer {
-  id             String   @id @default(uuid()) @db.Uuid
-  organizationId String   @map("organization_id") @db.Uuid
-  name           String   @db.VarChar(255)
-  contactPerson  String?  @map("contact_person") @db.VarChar(255)
-  phone          String?  @db.VarChar(20)
-  email          String?  @db.VarChar(255)
-  isActive       Boolean  @default(true) @map("is_active")
-  createdAt      DateTime @default(now()) @map("created_at")
-  updatedAt      DateTime @updatedAt @map("updated_at")
+  id                    String        @id @default(uuid()) @db.Uuid
+  organizationId        String        @map("organization_id") @db.Uuid
+  name                  String        @db.VarChar(255)
+  companyName           String        @map("company_name") @db.VarChar(255)
+  contactPerson         String?       @map("contact_person") @db.VarChar(255)
+  phone                 String?       @db.VarChar(20)
+  email                 String?       @db.VarChar(255)
+  gstNumber             String?       @map("gst_number") @db.VarChar(15)
+  address               String?       @db.Text
+  city                  String?       @db.VarChar(100)
+  state                 String?       @db.VarChar(100)
+  preferredPaymentTerms PaymentTerms? @map("preferred_payment_terms")
+  creditLimit           Decimal?      @map("credit_limit") @db.Decimal(12, 2)
+  notes                 String?       @db.Text
+  isActive              Boolean       @default(true) @map("is_active")
+  createdAt             DateTime      @default(now()) @map("created_at")
+  updatedAt             DateTime      @updatedAt @map("updated_at")
 
   organization     Organization      @relation(fields: [organizationId], references: [id])
   productionOrders ProductionOrder[]
